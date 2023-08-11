@@ -30,10 +30,15 @@ const resolvers = {
     },
     async updateTodo(
       _: any,
-      { ID, editTodoInput: { text, completed } }: { ID: string; editTodoInput: { text: string; completed: boolean } }
+      { ID, editTodoInput }: { ID: string; editTodoInput: { text: string; completed: boolean } }
     ) {
-      const wasUpdated = (await TodoModel.updateOne({ _id: ID }, { text, completed })).modifiedCount;
-      return wasUpdated;
+      const updatedTodo = await TodoModel.findByIdAndUpdate(
+        ID,
+        editTodoInput,
+        { new: true }
+      );
+    
+      return updatedTodo;
     },
   },
 };

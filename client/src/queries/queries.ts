@@ -1,4 +1,3 @@
-// ./client/src/queries.ts
 import { gql } from '@apollo/client';
 
 export const GET_TODOS = gql`
@@ -24,6 +23,16 @@ export const ADD_TODO = gql`
 export const DELETE_TODO = gql`
   mutation DeleteTodoMutation($ID: ID!) {
     deleteTodo(ID: $ID)
+  }
+`;
+
+export const UPDATE_TODO = gql`
+  mutation UpdateTodoMutation($ID: ID!, $editTodoInput: EditTodoInput!) {
+    updateTodo(ID: $ID, editTodoInput: $editTodoInput) {
+      id
+      text
+      completed
+    }
   }
 `;
 

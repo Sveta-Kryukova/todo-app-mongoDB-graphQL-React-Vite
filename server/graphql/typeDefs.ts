@@ -1,4 +1,3 @@
-// ./server/graphql/typeDefs.ts
 import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
@@ -14,8 +13,8 @@ const typeDefs = gql`
   }
 
   input EditTodoInput {
-    text: String
-    completed: Boolean
+  text: String
+  completed: Boolean
   }
 
   type Query {
@@ -24,9 +23,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addTodo(TodoInput: TodoInput!): Todo!
-    deleteTodo(ID: ID!): Boolean
-    updateTodo(ID: ID!, editTodoInput: TodoInput!): Boolean
+  addTodo(TodoInput: TodoInput!): Todo!
+  deleteTodo(ID: ID!): Boolean
+  updateTodo(ID: ID!, editTodoInput: EditTodoInput!): Todo
   }
 `;
 

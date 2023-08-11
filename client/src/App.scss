@@ -1,6 +1,53 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  &__wrapper {
+    width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &__input{
+      width: 100%;
+      max-width: 500px;
+      padding: 0.5rem;
+      margin: 0 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    &__button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+  
+      &__image{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 }

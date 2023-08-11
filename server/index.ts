@@ -1,10 +1,13 @@
 import { ApolloServer } from 'apollo-server';
 import mongoose from 'mongoose';
-
-const MONGO_DB = process.env.MONGO_DB;
+import dotenv from 'dotenv';
 
 import typeDefs from './graphql/typeDefs'
 import resolvers from './graphql/resolvers'
+
+dotenv.config();
+
+const MONGO_DB = process.env.MONGO_DB;
 
 const server = new ApolloServer({
   typeDefs,
@@ -17,5 +20,5 @@ mongoose.connect(MONGO_DB as string)
     return server.listen({ port: 5000 });
   })
   .then((res) => {
-    console.log(`Server running at ${res.url}`);
+    console.log(`🚀🚀🚀Server running at ${res.url}`);
   });
